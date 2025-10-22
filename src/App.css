@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
+/* src/App.css - minimal but nice styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fb;
+  color: #222;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  background: #111827;
+  color: #fff;
+  padding: 12px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.logo img { width: 40px; height: 40px; border-radius: 8px; }
+nav a { color: #9ca3af; margin-right: 16px; text-decoration: none; font-weight: 600; }
+nav a.active { color: #f59e0b; }
+.btn { background: #f59e0b; color: #111827; border: none; padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+.btn-secondary { background: #e5e7eb; color: #111827; border: none; padding: 8px 12px; border-radius: 8px; cursor: pointer; }
+.btn-danger { background: #ef4444; color: white; border: none; padding: 8px 12px; border-radius: 8px; cursor: pointer; }
+
+/* Card */
+.card {
+  max-width: 1100px;
+  margin: 24px auto;
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.06);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Post grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* Post card */
+.post-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-shadow: 0 6px 14px rgba(2,6,23,0.04);
 }
+.post-card img { width: 100%; height: 160px; object-fit: cover; }
+.post-body { padding: 12px; flex: 1; display: flex; flex-direction: column; }
+.post-body h3 { margin: 0 0 8px; font-size: 1.05rem; color: #111827; }
+.meta { color: #6b7280; font-size: 0.9rem; margin-bottom: 6px; }
+.post-body p { flex: 1; color: #374151; margin-bottom: 12px; }
 
-.App-link {
-  color: #61dafb;
-}
+/* card actions */
+.card-actions { display:flex; gap: 8px; align-items:center; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* form */
+.form-row { margin-bottom: 12px; display:flex; flex-direction: column; }
+.form-row label { font-weight: 600; margin-bottom: 6px; }
+input, select, textarea { padding: 10px; border-radius: 8px; border: 1px solid #e6e7ea; font-size: 1rem; }
+.err { color: #ef4444; margin-top: 6px; font-size: 0.9rem; }
+
+/* small adjustments */
+.btn-link { background: none; border: none; color: #2563eb; text-decoration: underline; cursor:pointer; padding: 6px; }
